@@ -1,8 +1,8 @@
-import { userService } from "../../services/userService"
+import { userService } from "../../services/user.service"
 
 export const login = (  loggedInUser ) => {
     return async (dispatch) => {
-        const user = await userService.login()
+        const user = await userService.login(loggedInUser)
         dispatch({ type: 'LOGIN', loggedInUser: user })
     }
 }

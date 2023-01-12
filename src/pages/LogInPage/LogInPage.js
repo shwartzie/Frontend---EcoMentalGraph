@@ -1,10 +1,8 @@
-import React from 'react'
-
+import React from "react";
 export const LogInPage = () => {
-    return (
-        <>
-            <div> LOGIN</div>
-        </>
-    )
-}
-
+  return (
+    <>
+      <div> LOGIN</div>
+    </>
+  );
+};

@@ -1,0 +1,46 @@
+.main-landing-page {
+    display: grid;
+    grid-template-areas:
+        "top-bar top-bar"
+        "nav-bar main-view"
+        "now-playing-bar now-playing-bar";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    .main-landing-page-container {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+.landing-page-layout {
+    width: 100%;
+    main {
+        height: 100%;
+        display: block;
+        .landing-page-header-and-favourites-container {
+            grid-gap: 24px;
+            display: grid;
+            padding: 0 32px;
+            padding-top: 24px;
+
+            .landing-page-header-and-favourites-section {
+                webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                margin-bottom: 16px;
+                min-height: 200px;
+                position: relative;
+            }
+        }
+    }
+}
+

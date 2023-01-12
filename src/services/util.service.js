@@ -2,8 +2,8 @@ export const utilService = {
     getCurrentDayStatus
 }
 
-function getCurrentDayStatus(): string {
-    const currentTime: () => Date = new Date().getHours();
+function getCurrentDayStatus() {
+    const currentTime = new Date().getHours();
     let title = ""
     if (currentTime < 12) {
         title = "Good Morning";

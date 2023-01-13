@@ -1,6 +1,5 @@
 
 import { httpService } from './http.service.js'
-import { store } from '../store/index.js'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service.js'
 // import { showSuccessMsg } from '../services/event-bus.service'
 import { utilService } from './util.service.js'
@@ -23,7 +22,8 @@ const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 window.userService = userService
 
 
-function getUsers() {
+async function getUsers() {
+    console.log('gettings users');
     return httpService.get(`user`)
 }
 
@@ -56,7 +56,7 @@ async function login(userCred) {
     const user = await httpService.post('auth/login', userCred)
     if (user) {
         socketService.login(user._id)
-        return saveLocalUser(user)
+        return user
     }
 }
 async function signup(userCred) {

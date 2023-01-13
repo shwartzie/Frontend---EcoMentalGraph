@@ -9,18 +9,18 @@ export const LogInPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     // const {loggedinUser} = useSelector((state) => state.userModule)
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     async function handleSubmit(event) {
         event.preventDefault();
         console.log(`Username: ${username}, Password: ${password}`);
-        const userToSend = { username, password }
+        const userToSend = { username, password };
         try {
             await dispatch(login(userToSend))
             navigate('/patient')
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 
@@ -28,21 +28,19 @@ export const LogInPage = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     };
 
     const inputStyles = {
         width: "200px",
         height: "30px",
-        margin: "10px"
+        margin: "10px",
     };
-
     const labelStyles = {
         width: "200px",
         height: "10px",
         margin: "10px"
     };
-
     return (
         <>
             <form onSubmit={handleSubmit} className="form-container" style={formStyles} >

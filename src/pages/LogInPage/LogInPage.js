@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { userService } from "../../services/user.service.js";
 import { useNavigate } from "react-router-dom";
 import { login } from '../../store/actions/userActions.js'
-import './design.css' 
+import './design.css'
 
 export const LogInPage = () => {
     const [username, setUsername] = useState("");
@@ -45,34 +45,34 @@ export const LogInPage = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="form-container"  style={formStyles} >
-            <div className=".logo" style={{ textAlign: 'center', fontSize: '30px', marginTop: '50px' }}>Logo</div>
-            <br />
-            <br />
-            <br />
+            <form onSubmit={handleSubmit} className="form-container" style={formStyles} >
+                <div className=".logo" style={{ textAlign: 'center', fontSize: '30px', marginTop: '50px' }}>Logo</div>
+                <br />
+                <br />
+                <br />
                 <label className=".label" style={labelStyles}>
                     Username
                 </label>
                 <input
-                        className="input"
-                        type="text"
-                        value={username}
-                        onChange={event => setUsername(event.target.value)}
-                        style={inputStyles}
-                        
-                    />
+                    className="input"
+                    type="text"
+                    value={username}
+                    onChange={event => setUsername(event.target.value)}
+                    style={inputStyles}
+
+                />
                 <br />
                 <label className=".label" style={labelStyles}>
                     Password
                 </label>
                 <input
-                        className="input"
-                        type="password"
-                        value={password}
-                        onChange={event => setPassword(event.target.value)}
-                        
-                        style={inputStyles}
-                    />
+                    className="input"
+                    type="password"
+                    value={password}
+                    onChange={event => setPassword(event.target.value)}
+
+                    style={inputStyles}
+                />
                 <br />
                 <button type="submit" className="form-btn" style={{ width: '200px', height: '30px', margin: '10px' }}>Login</button>
                 <br />

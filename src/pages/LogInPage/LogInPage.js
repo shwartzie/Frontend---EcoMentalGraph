@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userService } from "../../services/user.service.js";
 import { useNavigate } from "react-router-dom";
-import { login } from '../../store/actions/userActions.js';
+import { login } from "../../store/actions/userActions.js";
+
 export const LogInPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    
+    // const {loggedinUser} = useSelector((state) => state.userModule)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -25,45 +26,53 @@ export const LogInPage = () => {
         }
     }
 
-    const formStyles = {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center"
-    };
+const formStyles = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+};
 
-    const inputStyles = {
-        width: "200px",
-        height: "30px",
-        margin: "10px"
-    };
+const inputStyles = {
+    width: "200px",
+    height: "30px",
+    margin: "10px",
+};
 
-    return (
-        <>
-            <div style={{ textAlign: 'center', fontSize: '30px', marginTop: '50px' }}> LOGIN</div>
-            <form onSubmit={handleSubmit} style={formStyles}>
-                <label>
-                    Username:
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={event => setUsername(event.target.value)}
-                        style={inputStyles}
-                    />
-                </label>
-                <br />
-                <label>
-                    Password:
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={event => setPassword(event.target.value)}
-                        style={inputStyles}
-                    />
-                </label>
-                <br />
-                <button type="submit" style={{ width: '200px', height: '30px', margin: '10px' }}>Login</button>
-            </form>
-        </>
-    );
+return (
+    <>
+        <div style={{ textAlign: "center", fontSize: "30px", marginTop: "50px" }}>
+            LOGIN
+        </div>
+
+        <form onSubmit={() => handleSubmit()} style={formStyles}>
+            <label>
+                Username:
+                <input
+                    type="text"
+                    value={username}
+                    onChange={(event) => setUsername(event.target.value)}
+                    style={inputStyles}
+                />
+            </label>
+            <br />
+            <label>
+                Password:
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    style={inputStyles}
+                />
+            </label>
+            <br />
+            <button
+                type="submit"
+                style={{ width: "200px", height: "30px", margin: "10px" }}
+            >
+                Login
+            </button>
+        </form>
+    </>
+);
 };

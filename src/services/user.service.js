@@ -14,7 +14,8 @@ export const userService = {
     getById,
     remove,
     update,
-    signupGuest
+    signupGuest,
+    updateOnReport
 }
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -47,8 +48,11 @@ function remove(userId) {
 
 async function update(user) {
     user = await httpService.put(`user/${user._id}`, user)
-    // Handle case in which admin updates other user's details
-    if (getLoggedinUser()._id === user._id) saveLocalUser(user)
+    return user
+}
+
+async function updateOnReport({user,option}) {
+    user = await httpService.put(`user/${user._id}`, {user,option})
     return user
 }
 

@@ -1,0 +1,86 @@
+body {
+	position: relative;
+	width: 390px;
+	height: 844px;
+
+	background: #ffffff;
+}
+
+.form-container {
+	display: flex;
+	width: 400px;
+	height: 500px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px #ccc;
+	label {
+		/* width: 35px;
+    height: 16px; */
+		padding-right: 5px;
+		font-family: 'Roboto';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 16px;
+		text-align: center;
+		width: 200px;
+		height: 15px;
+		margin: 10px;
+		
+		color: #888888bc;
+	}
+	input {
+		width: 325px;
+		height: 41px;
+		background: #ffffff;
+		box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12);
+		border-radius: 50px;
+		padding: 20px;
+	}
+	logo-emg {
+		position: absolute;
+		width: 273px;
+		height: 162px;
+		left: 58px;
+		top: 105px;
+		margin-bottom: 50px;
+		background: #d9d9d990;
+	}
+	forgot-pass {
+		width: 171px;
+		height: 10px;
+		left: 110px;
+		top: 661px;
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 300;
+		font-size: 10px;
+		line-height: 10px;
+		text-align: center;
+		text-decoration-line: underline;
+		color: #121212;
+	}
+	
+}
+
+.form-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.form-btn {
+	width: 325px;
+	height: 41px;
+	background: #5d5859;
+	border-radius: 50px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	color: #ffffff;
+}
+
+.form-btn:hover {
+	background-color: #817e85;
+}

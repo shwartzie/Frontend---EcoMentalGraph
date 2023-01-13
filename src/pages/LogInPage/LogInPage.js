@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { userService } from "../../services/user.service.js";
 import { useNavigate } from "react-router-dom";
 import { login } from '../../store/actions/userActions.js'
-import './design.css'
+
 
 export const LogInPage = () => {
     const [username, setUsername] = useState("");
@@ -44,11 +44,9 @@ export const LogInPage = () => {
     return (
         <>
             <form onSubmit={handleSubmit} className="form-container" style={formStyles} >
-                <div className=".logo" style={{ textAlign: 'center', fontSize: '30px', marginTop: '50px' }}>Logo</div>
-                <br />
-                <br />
-                <br />
-                <label className=".label" style={labelStyles}>
+                <div className="logo-emg" style={{ textAlign: 'center', fontSize: '30px', marginTop: '50px' }}>Logo</div>
+                
+                <label className="label" style={labelStyles}>
                     Username
                 </label>
                 <input
@@ -60,7 +58,7 @@ export const LogInPage = () => {
 
                 />
                 <br />
-                <label className=".label" style={labelStyles}>
+                <label className="label" style={labelStyles}>
                     Password
                 </label>
                 <input
@@ -74,7 +72,7 @@ export const LogInPage = () => {
                 <br />
                 <button type="submit" className="form-btn" style={{ width: '200px', height: '30px', margin: '10px' }}>Login</button>
                 <br />
-                <div className=".forgot-pass">Forgot your password?</div>
+                <div className="forgot-pass">Forgot your password?</div>
             </form>
         </>
     );

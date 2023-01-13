@@ -2,31 +2,26 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userService } from "../../services/user.service.js";
 import { useNavigate } from "react-router-dom";
-import { login } from '../../store/actions/userActions.js'
+import { login } from '../../store/actions/userActions.js';
 export const LogInPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    // const {loggedinUser} = useSelector((state) => state.userModule)
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     async function handleSubmit(event) {
         event.preventDefault();
 
         // Perform login logic here, such as sending a request to a backend
         console.log(`Username: ${username}, Password: ${password}`);
-        const userToSend = { username, password }
+        const userToSend = { username, password };
         try {
-            const { data, status } = await userService.login(userToSend)
-            if (status === 200) {
-                await dispatch(login(data.user))
-                navigate('/paitent')
-                
-                return
-            }
+            await dispatch(login(userToSend));
+            navigate('/patient');
 
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 

@@ -2,15 +2,26 @@ import { userService } from "../../services/user.service"
 
 export const login = (  loggedInUser ) => {
     return async (dispatch) => {
-        const user = await userService.login(loggedInUser)
-        dispatch({ type: 'LOGIN', loggedInUser: user })
+        try {
+            dispatch({ type: 'LOGIN', loggedInUser })
+            const user = await userService.login(loggedInUser)    
+        } catch (error) {
+            dispatch({ type: 'LOGIN', loggedInUser: null })
+
+        }
+        
+       
     }
 }
 
-
 export const logout = ( loggedInUser ) => {
     return async (dispatch) => {
-        const user = await userService.logout()
-        dispatch({ type: 'LOGOUT', loggedInUser: user })
+        try {
+            const user = await userService.logout()
+            dispatch({ type: 'LOGOUT', loggedInUser: user })
+        } catch (error) {
+            dispatch({ type: 'LOGOUT', loggedInUser: null })
+        }
+        
     }
 }

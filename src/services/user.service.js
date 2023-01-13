@@ -1,7 +1,7 @@
 
-import { httpService } from './http.service'
+import { httpService } from './http.service.js'
 import { store } from '../store/index.js'
-import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service'
+import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service.js'
 // import { showSuccessMsg } from '../services/event-bus.service'
 import { utilService } from './util.service.js'
 

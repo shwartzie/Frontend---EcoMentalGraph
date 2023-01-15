@@ -12,15 +12,12 @@ export const Therapist = () => {
 
     useEffect(() => {
         const run = async () => {
-            const { users, reports } = await userService.getUsers();
-
-            // console.log('users:', users);
-            // console.log('reports:', reports);
+            const { users, reports } = await userService.getUsersAndReports();
             setUsers([...users]);
-            setReports([...reports])
+            setReports([...reports]);
         };
 
-        run()
+        run();
     }, []);
 
     return (
@@ -30,8 +27,8 @@ export const Therapist = () => {
                 {users.map((user) => (<PreviewUser user={user} key={user._id} />))}
             </section>}
 
-            {reports && <section>
-                <Chart reports={reports} />
+            {reports && users && <section>
+                <Chart reports={reports} users={users} />
             </section>}
         </>
     );

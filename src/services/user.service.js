@@ -15,7 +15,8 @@ export const userService = {
     remove,
     update,
     signupGuest,
-    updateOnReport
+    updateOnReport,
+    getUsersAndReports
 }
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -24,8 +25,13 @@ window.userService = userService
 
 
 async function getUsers() {
-    console.log('gettings users');
+    console.log('getting users');
     return httpService.get(`user`)
+}
+
+async function getUsersAndReports() {
+    console.log('getting users');
+    return httpService.get(`user/reports`)
 }
 
 function onUserUpdate(user) {
